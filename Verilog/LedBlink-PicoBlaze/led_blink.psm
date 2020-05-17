@@ -1,0 +1,34 @@
+NAMEREG s3, led_stat
+CONSTANT led_port, 00
+led_off: LOAD led_stat,00
+         OUTPUT led_stat, led_port
+		 
+delay_1s_off1:   LOAD s2, 98
+                LOAD s1, 96
+                LOAD s0, 80
+				CALL software_delay
+                ;
+                ; The delay loop decrements [s2,s1,s0] until it reaches zero
+                ; Each decrement cycle is 5 instructions which is 10 clock cycles (100ns at 100MHz)
+                ;
+led_on: LOAD led_stat,FF
+         OUTPUT led_stat, led_port
+		
+delay_1s_off2:   LOAD s2, 98
+                LOAD s1, 96
+                LOAD s0, 80
+				CALL software_delay
+                ;
+                ; The delay loop decrements [s2,s1,s0] until it reaches zero
+                ; Each decrement cycle is 5 instructions which is 10 clock cycles (100ns at 100MHz)
+                ;
+		
+JUMP led_off;
+
+software_delay: LOAD s0, s0             ;pad loop to make it 10 clock cycles (5 instructions)
+                SUB s0, 1'd
+                SUBCY s1, 0'd
+                SUBCY s2, 0'd
+                JUMP NZ, software_delay
+                RETURN				
+
