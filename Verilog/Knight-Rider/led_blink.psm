@@ -1,0 +1,316 @@
+NAMEREG s3, led_stat
+CONSTANT led_port, 00
+NAMEREG s4, counter
+
+
+LOAD counter, 2'd
+case1_i: LOAD led_stat,01
+         OUTPUT led_stat, led_port
+		 CALL delay_200ms
+		 SUB counter, 1'd
+		 JUMP NZ, case1_i
+		 LOAD counter, 2'd 
+		 
+case2_i: LOAD led_stat,03
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,02
+         OUTPUT led_stat, led_port
+	     CALL delay_150ms
+		 SUB counter, 1'd
+		 JUMP NZ, case2_i
+		 LOAD counter, 2'd 
+
+case3_i: LOAD led_stat,07
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,06
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,04
+         OUTPUT led_stat, led_port
+		 CALL delay_100ms
+		 SUB counter, 1'd
+		 JUMP NZ, case3_i
+		 LOAD counter, 2'd
+		 
+case4_i: LOAD led_stat,0F
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,0E
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,0C
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 LOAD led_stat,08
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 SUB counter, 1'd
+		 JUMP NZ, case4_i
+		 LOAD counter, 2'd
+		 
+case5_i: LOAD led_stat,1E
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,1C
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,18
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 LOAD led_stat,10
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 SUB counter, 1'd
+		 JUMP NZ, case5_i
+		 LOAD counter, 2'd
+		 
+case6_i: LOAD led_stat,3C
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,38
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,30
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 LOAD led_stat,20
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 SUB counter, 1'd
+		 JUMP NZ, case6_i
+		 LOAD counter, 2'd
+
+case7_i: LOAD led_stat,78
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,70
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,60
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 LOAD led_stat,40
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 SUB counter, 1'd
+		 JUMP NZ, case7_i
+		 LOAD counter, 2'd
+		 
+case8_i: LOAD led_stat,F0
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,E0
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,C0
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 LOAD led_stat,80
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 SUB counter, 1'd
+		 JUMP NZ, case8_i
+		 LOAD counter, 2'd
+		 
+case9_i: LOAD led_stat,E0
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,C0
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,80
+         OUTPUT led_stat, led_port
+		 CALL delay_100ms
+		 SUB counter, 1'd
+		 JUMP NZ, case9_i
+		 LOAD counter, 2'd
+		 
+case10_i: LOAD led_stat,C0
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,80
+         OUTPUT led_stat, led_port
+	     CALL delay_150ms
+		 SUB counter, 1'd
+		 JUMP NZ, case10_i
+		 LOAD counter, 2'd
+		 
+case1_g: LOAD led_stat,80
+         OUTPUT led_stat, led_port
+		 CALL delay_200ms		 
+		 SUB counter, 1'd
+		 JUMP NZ, case1_g
+		 LOAD counter, 2'd
+
+case2_g: LOAD led_stat,C0
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,40
+         OUTPUT led_stat, led_port
+	     CALL delay_150ms
+		 SUB counter, 1'd
+		 JUMP NZ, case2_g
+		 LOAD counter, 2'd
+		 
+case3_g: LOAD led_stat,E0
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,60
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,20
+         OUTPUT led_stat, led_port
+		 CALL delay_100ms
+		 SUB counter, 1'd
+		 JUMP NZ, case3_g
+		 LOAD counter, 2'd
+
+case4_g: LOAD led_stat,F0
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,70
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,30
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 LOAD led_stat,10
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 SUB counter, 1'd
+		 JUMP NZ, case4_g
+		 LOAD counter, 2'd	 
+		 
+case5_g: LOAD led_stat,78
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,38
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,18
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 LOAD led_stat,08
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 SUB counter, 1'd
+		 JUMP NZ, case5_g
+		 LOAD counter, 2'd
+		 
+case6_g: LOAD led_stat,3C
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,1C
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,0C
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 LOAD led_stat,04
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 SUB counter, 1'd
+		 JUMP NZ, case6_g
+		 LOAD counter, 2'd
+		 
+case7_g: LOAD led_stat,1E
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,0E
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,06
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 LOAD led_stat,02
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 SUB counter, 1'd
+		 JUMP NZ, case7_g
+		 LOAD counter, 2'd
+		 
+case8_g: LOAD led_stat,0F
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,07
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,03
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 LOAD led_stat,01
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms
+		 SUB counter, 1'd
+		 JUMP NZ, case8_g
+		 LOAD counter, 2'd
+		 
+case9_g: LOAD led_stat,07
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,03
+         OUTPUT led_stat, led_port
+	     CALL delay_50ms
+		 LOAD led_stat,02
+         OUTPUT led_stat, led_port
+		 CALL delay_100ms
+		 SUB counter, 1'd
+		 JUMP NZ, case9_g
+		 LOAD counter, 2'd
+		 
+case10_g: LOAD led_stat,03
+         OUTPUT led_stat, led_port
+		 CALL delay_50ms		 
+		 LOAD led_stat,01
+         OUTPUT led_stat, led_port
+	     CALL delay_150ms
+		 SUB counter, 1'd
+		 JUMP NZ, case10_g
+		 LOAD counter, 2'd
+
+JUMP case1_i
+
+delay_50ms:   LOAD s2, 5'd   ;0.25sn
+                LOAD s1, 96
+                LOAD s0, 80
+				CALL software_delay
+                ;
+                ; The delay loop decrements [s2,s1,s0] until it reaches zero
+                ; Each decrement cycle is 5 instructions which is 10 clock cycles (100ns at 100MHz)
+                RETURN
+		
+delay_100ms:   LOAD s2, 10   ;0.25sn
+                LOAD s1, 96
+                LOAD s0, 80
+				CALL software_delay
+                ;
+                ; The delay loop decrements [s2,s1,s0] until it reaches zero
+                ; Each decrement cycle is 5 instructions which is 10 clock cycles (100ns at 100MHz)
+                RETURN
+		
+delay_150ms:   LOAD s2, 15   ;0.25sn
+                LOAD s1, 96
+                LOAD s0, 80
+				CALL software_delay
+                ;
+                ; The delay loop decrements [s2,s1,s0] until it reaches zero
+                ; Each decrement cycle is 5 instructions which is 10 clock cycles (100ns at 100MHz)
+                RETURN
+				
+delay_200ms:   LOAD s2, 20   ;0.5sn
+                LOAD s1, 96
+                LOAD s0, 80
+				CALL software_delay
+                ;
+                ; The delay loop decrements [s2,s1,s0] until it reaches zero
+                ; Each decrement cycle is 5 instructions which is 10 clock cycles (100ns at 100MHz)
+                RETURN
+
+software_delay: LOAD s0, s0             ;pad loop to make it 10 clock cycles (5 instructions)
+                SUB s0, 1'd
+                SUBCY s1, 0'd
+                SUBCY s2, 0'd
+                JUMP NZ, software_delay
+                RETURN
