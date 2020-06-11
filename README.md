@@ -1,2 +1,2 @@
 # HDL-Projects
-VHDL and Verilog projects
+VHDL and Verilog projects.
